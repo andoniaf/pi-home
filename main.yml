@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  roles:
+    - {role: docker} 
+
+  tasks:
+  - name: Congratulations!
+    debug:
+      msg:
+        - "Provision donner kebab!"

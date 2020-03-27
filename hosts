@@ -1,7 +1,9 @@
-[rpis]
 antman ansible_host=192.168.1.3
 wasp ansible_host=192.168.1.3
 
-[rpis:vars]
+
+[all:vars]
 ansible_user=pi
 ansible_python_interpreter=/usr/bin/python3
+
+
