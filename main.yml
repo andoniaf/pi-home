@@ -15,8 +15,11 @@
 
     # Run apt-get update and apt-get upgrade
     - include_tasks: ./tasks/update.yml
-      ignore_errors: true
       tags: update
+
+    # Install packages
+    - include_tasks: ./tasks/packages.yml
+      tags: install
 
     # Set the hostname
     - include_tasks: ./tasks/hostname.yml
