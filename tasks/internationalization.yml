@@ -10,12 +10,13 @@
 #   templates:
 #       templates/timezone
 #       templates/keyboard
-#       
+#
 
 - name: Set the locale via raspi-config
   become: yes
   command: raspi-config nonint do_change_locale {{ locale }}
-      
+  ignore_errors: true
+
 - name: Set the keyboard layout via raspi-config
   become: yes
   command: raspi-config nonint do_configure_keyboard {{ keyboard_layout }}
