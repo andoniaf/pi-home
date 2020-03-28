@@ -1,0 +1,11 @@
+# Set GPU memory split
+
+- name: Get current GPU memory split
+  shell: "raspi-config nonint get_config_var gpu_mem /boot/config.txt"
+  register: gpu_mem
+  changed_when: False
+
+- name: Set GPU memory split to 16
+  shell: "raspi-config nonint do_memory_split 16"
+  when: gpu_mem.stdout != 16
+  notify: reboot

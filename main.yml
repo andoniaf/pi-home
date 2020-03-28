@@ -5,6 +5,10 @@
     timezone: Europe/Madrid
 
   pre_tasks:
+    # Set GPU memory split
+    - include_tasks: ./tasks/set_gpusplit.yml
+      tags: setup
+
     # Set Internationalization Options
     - include_tasks: ./tasks/internationalization.yml
       tags: setup
