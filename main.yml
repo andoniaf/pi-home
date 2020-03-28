@@ -1,5 +1,25 @@
 - hosts: rpis
-  become: yes
+  vars:
+    locale: "es_ES.UTF-8"
+    keyboard_layout: "es"
+    timezone: Europe/Madrid
+
+  pre_tasks:
+    # Set Internationalization Options
+    - include_tasks: ./tasks/internationalization.yml
+      tags: setup
+
+    # Run apt-get update and apt-get upgrade 
+    - include_tasks: ./tasks/update.yml
+      tags: update
+
+    # Set the hostname
+    - include_tasks: ./tasks/hostname.yml
+      tags: setup
+
+    - include_tasks: ./tasks/tzdata.yml
+      tags: system
+
   roles:
     - geerlingguy.pip
     - geerlingguy.docker_arm
