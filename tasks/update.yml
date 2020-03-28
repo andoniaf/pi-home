@@ -6,7 +6,7 @@
 - name: Update apt packages
   become: yes
   ignore_errors: true
-  apt: 
+  apt:
     update_cache=yes
 
 # Upgrade apt packages
