@@ -15,6 +15,7 @@
 
     # Run apt-get update and apt-get upgrade
     - include_tasks: ./tasks/update.yml
+      ignore_errors: true
       tags: update
 
     # Set the hostname
@@ -25,9 +26,8 @@
       tags: system
 
   roles:
-    - geerlingguy.pip
-    - geerlingguy.docker_arm
-
+    - { role: geerlingguy.pip, become: yes }
+    - { role: geerlingguy.docker_arm, become: yes }
 
   tasks:
   - name: Congratulations!
