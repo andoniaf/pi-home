@@ -1,7 +1,9 @@
-- hosts: all
+- hosts: rpis
   become: yes
   roles:
-    - {role: docker} 
+    - geerlingguy.pip
+    - geerlingguy.docker_arm
+
 
   tasks:
   - name: Congratulations!
