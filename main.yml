@@ -5,28 +5,25 @@
     timezone: Europe/Madrid
 
   pre_tasks:
-    # Set GPU memory split
-    - include_tasks: ./tasks/set_gpusplit.yml
-      tags: setup
+    - name: Set GPU memory split
+      include_tasks:
+        file: ./tasks/set_gpusplit.yml
 
-    # Set Internationalization Options
-    - include_tasks: ./tasks/internationalization.yml
-      tags: setup
+    - name: Set Internationalization Options
+      include_tasks:
+        file: ./tasks/internationalization.yml
 
-    # Run apt-get update and apt-get upgrade
-    - include_tasks: ./tasks/update.yml
-      tags: update
+    - name: Run apt-get update and apt-get upgrade
+      include_tasks:
+        file: ./tasks/update.yml
 
-    # Install packages
-    - include_tasks: ./tasks/packages.yml
-      tags: install
+    - name: Install packages
+      include_tasks:
+        file: ./tasks/packages.yml
 
-    # Set the hostname
-    - include_tasks: ./tasks/hostname.yml
-      tags: setup
-
-    - include_tasks: ./tasks/tzdata.yml
-      tags: system
+    - name: Set the hostname
+      include_tasks:
+        file: ./tasks/hostname.yml
 
   roles:
     - { role: geerlingguy.pip, become: yes }
@@ -50,3 +47,7 @@
     - name: wait for reboot to finish
       local_action: wait_for host={{ ansible_host }} state=started port=22 delay=50 timeout=120
       become: false
+
+    - name: update tzdata
+      become: true
+      command: dpkg-reconfigure --frontend noninteractive tzdata

@@ -1,13 +1,17 @@
 - name: Install a list of packages
   apt:
-    pkg: "{{ item }}"
-  with_items: "{{ packages }}"
+    pkg:
+      - vim
+      - tmux
+  become: yes
 
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
+  become: yes
 
 - name: Remove dependencies that are no longer required
   apt:
     autoremove: yes
+  become: yes
 
