@@ -1,6 +1,8 @@
 [?]: Change hostname
 []: Config SSH only using keys
 [?]: Docker
+  []: COnfigure it to use buildkit  
+
   []: pihole (+DNS)
   []: openvpn
   []: transmission
@@ -8,7 +10,6 @@
   []: netscan (old wifiscan)
   []: lista compra app [?]
 
-- tasks/reboot.yml should be a handler?
 
 ---
 https://github.com/ajdecon/ansible-simple-slurm-cluster
