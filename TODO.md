@@ -1,10 +1,11 @@
-[?]: Change hostname
+[X]: Change hostname
 []: Config SSH only using keys
-[?]: Docker
+[X]: Docker
   []: COnfigure it to use buildkit  
 
   []: pihole (+DNS)
   []: openvpn
+    []: Convert to ansible role
   []: prometheus + nodeexporter + grafana
   []: transmission
     []: storage?
