@@ -2,6 +2,7 @@
   apt:
     pkg:
       - vim
+      - git
       - tmux
   become: yes
 
