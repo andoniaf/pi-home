@@ -4,7 +4,7 @@
   []: COnfigure it to use buildkit  
 
   []: pihole (+DNS)
-  []: openvpn
+  [X]: openvpn
     []: Convert to ansible role
   []: prometheus + nodeexporter + grafana
   []: transmission
