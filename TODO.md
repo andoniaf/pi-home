@@ -5,6 +5,7 @@
 
   []: pihole (+DNS)
   []: openvpn
+  []: prometheus + nodeexporter + grafana
   []: transmission
     []: storage?
   []: netscan (old wifiscan)
