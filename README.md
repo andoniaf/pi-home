@@ -11,3 +11,6 @@ mkdir ~/.ssh && curl -s https://github.com/andoniaf.keys > ~/.ssh/authorized_key
 ## Services
 ### OpenVPN
 Based on [kylemanna/docker-openvpn](https://github.com/kylemanna/docker-openvpn)
+
+### Pi-hole
+Based on [pi-hole/docker-pi-hole](https://github.com/pi-hole/docker-pi-hole)

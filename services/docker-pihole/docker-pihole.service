@@ -1,0 +1,16 @@
+[Unit]
+Description=PiHole over Docker systemd service.
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=1
+User=pi
+WorkingDirectory=/home/pi/services/docker-pihole
+ExecStart=docker-compose up 
+ExecStop=docker-compose down
+
+[Install]
+WantedBy=multi-user.target
