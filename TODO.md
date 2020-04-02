@@ -1,16 +1,16 @@
 [X]: Change hostname
-[]: Config SSH only using keys
+[]: Config SSHD service to only use keys
 [X]: Docker
   []: COnfigure it to use buildkit  
-
-  []: pihole (+DNS)
-  [X]: openvpn
-    []: Convert to ansible role
-  []: prometheus + nodeexporter + grafana
-  []: transmission
-    []: storage?
-  []: netscan (old wifiscan)
-  []: lista compra app [?]
+[x]: pihole (+DNS)
+  []: Convert to ansible role
+[X]: openvpn
+  []: Convert to ansible role
+[]: prometheus + nodeexporter + grafana
+[]: transmission
+  []: storage?
+[]: netscan (old wifiscan)
+[]: lista compra app [?]
 
 
 ---
