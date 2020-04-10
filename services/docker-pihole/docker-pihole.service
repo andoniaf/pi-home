@@ -10,7 +10,7 @@ RestartSec=1
 User=pi
 WorkingDirectory=/home/pi/services/docker-pihole
 ExecStart=docker-compose up 
-ExecStop=docker-compose down
+ExecStop=docker-compose stop
 
 [Install]
 WantedBy=multi-user.target

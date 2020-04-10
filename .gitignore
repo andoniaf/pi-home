@@ -3,3 +3,5 @@
 *.swp
 .ovpn
 data
+services/docker-pihole/etc-dnsmasq.d
+services/docker-pihole/etc-pihole
